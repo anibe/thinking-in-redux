@@ -24,7 +24,7 @@ class List extends React.Component {
               <p>{beer.size} <span className="label label-warning"> &pound; {beer.price}</span></p>
               <button
                 className="btn btn-primary"
-                onClick={() => this.props.dispatch(actions.addBeerToCart(beer))}
+                onClick={() => this.props.dispatch(actions.addBeerToCart(beer), this.props.dispatch(actions.toggleSideMenu()))}
               >
                 Buy me!
               </button>
