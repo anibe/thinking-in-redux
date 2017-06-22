@@ -1,6 +1,6 @@
 import React from "react"
-// import { connect } from 'react-redux'
-import { connect } from '../../react-redux/connect'
+import { connect } from 'react-redux'
+ //import { connect } from '../../react-redux/connect'
 
 const Basket = ({beers}) => (
   <div>
@@ -15,7 +15,7 @@ const Basket = ({beers}) => (
         <div className="media-right">
           <a
             className="fa-stack"
-            onClick={ () => { console.log("I should remove this beer from the cart: ", beer) }}
+            onClick={() => this.props.dispatch(actions.removeBeerFromCart(beer))}
           >
             <i className="fa fa-circle fa-stack-2x"></i>
             <i className="fa fa-trash fa-stack-1x fa-inverse"></i>
@@ -31,7 +31,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-
+  dispatch
 })
 
 export default connect(
